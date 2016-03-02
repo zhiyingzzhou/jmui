@@ -1,0 +1,90 @@
+{
+  "name": "jmui",
+  "description": "Mobile Web UI Framework powered by React",
+  "author": "Jimmy Chou <zliangyu@gmail.com>",
+  "license": "MIT",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junewinds/jmui.git"
+  },
+  "homepage": "http://www.junewinds.com/jmui/",
+  "keywords": [
+    "react",
+    "webpack",
+    "babel",
+    "mobile",
+    "framework",
+    "css",
+    "components"
+  ],
+  "main": "./lib/",
+  "jsnext:main": "./src/",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "lint": "eslint src",
+    "watch": "babel src --watch --out-dir lib",
+    "build:lib": "babel src --out-dir lib",
+    "build:umd": "webpack --config build/webpack.config.js",
+    "build:file": "node build/publish.js",
+    "build": "npm run build:lib && npm run build:umd && npm run build:file",
+    "preversion": "npm run clean",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "dom-helpers": "^2.4.0",
+    "classnames": "^2.2.3"
+  },
+  "peerDependencies": {
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
+  },
+  "devDependencies": {
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-loader": "*",
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+    "babel-register": "*",
+    "babel-runtime": "*",
+
+    "eslint": "*",
+    "eslint-config-standard": "*",
+    "eslint-config-standard-react": "*",
+    "eslint-loader": "*",
+    "eslint-plugin-babel": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-standard": "*",
+    "eslint-plugin-promise": "*",
+
+    "autoprefixer": "*",
+    "cssnano": "*",
+    "less": "*",
+    "fs-extra": "*",
+
+    "css-loader": "*",
+    "less-loader": "*",
+    "file-loader": "*",
+    "style-loader": "*",
+    "url-loader": "*",
+    "postcss-loader": "*",
+    "extract-text-webpack-plugin": "*",
+    "webpack": "*"
+  },
+  "engines": {
+    "node": ">=4.3.0",
+    "npm": "^3.0.0"
+  },
+  "npmName": "jmui"
+}
