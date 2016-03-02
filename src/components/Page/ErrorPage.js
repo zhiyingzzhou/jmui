@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Page from '../Container/Page'
 import Navbar from '../Bar/Navbar'
 import Button from '../Button/Button'
+import Block from '../Container/Block'
 
 export default class ErrorPage extends Component {
 
@@ -70,11 +71,11 @@ export default class ErrorPage extends Component {
         fixed
         navbar={this.renderNavbar()}
         >
-        <div className='content-block text-center'>
+        <Block className='text-center'>
           {this.renderIcon()}
           {this.renderMessage()}
           {this.renderButton()}
-        </div>
+        </Block>
       </Page>
     )
   }
