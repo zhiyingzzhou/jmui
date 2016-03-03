@@ -11,8 +11,8 @@ export default class Icon extends Component {
   render () {
     const { name, className, ...props } = this.props
     const classes = classNames({
-      'icon': true,
-      [`icon-${name}`]: name
+      'icon-jmui': true,
+      [`icon-jmui-${name}`]: name
     }, className)
     return (
       <i className={classes} {...props} />

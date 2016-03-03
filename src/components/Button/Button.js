@@ -10,18 +10,20 @@ export default class Button extends Component {
     fill: PropTypes.bool,
     big: PropTypes.bool,
     round: PropTypes.bool,
+    disable: PropTypes.bool,
     children: PropTypes.node,
     className: PropTypes.string
   };
 
   render () {
-    const { theme, active, fill, big, round, children, className, ...props } = this.props
+    const { theme, active, fill, big, round, disable, children, className, ...props } = this.props
     const classes = classNames({
       'button': true,
       'active': active,
       'button-round': round,
       'button-fill': fill,
       'button-big': big,
+      'disabled': disable,
       [`color-${theme}`]: theme
     }, className)
     return (

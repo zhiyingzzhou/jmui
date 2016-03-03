@@ -3,12 +3,13 @@ import Page from '../Container/Page'
 import Navbar from '../Bar/Navbar'
 import Button from '../Button/Button'
 import Block from '../Container/Block'
+import Icon from '../Icon/Icon'
 
 export default class ErrorPage extends Component {
 
   static propTypes = {
     title: PropTypes.string,
-    icon: PropTypes.string,
+    icon: PropTypes.node,
     message: PropTypes.string,
     onBack: PropTypes.func,
     onIndex: PropTypes.func
@@ -44,7 +45,7 @@ export default class ErrorPage extends Component {
       return icon
     }
     return (
-      <i className='icon icon-error' />
+      <Icon name='error' />
     )
   }
 
