@@ -15,12 +15,26 @@ export default class Page extends Component {
     fix: true
   };
 
+  static contextTypes = {
+    ui: PropTypes.object
+  };
+
+  componentWillMount () {
+    const { ui } = this.context
+    this.setState({
+      tabbar: ui.getTabbar()
+    })
+  }
+
   render () {
     const { children, fix, className, navbar, toolbar, ...props } = this.props
+    const { tabbar } = this.state
     const classes = classNames({
       'page': true,
       'navbar-fixed': fix && navbar,
-      'toolbar-fixed': fix && toolbar
+      'toolbar-fixed': fix && toolbar || tabbar !== 'none',
+      'no-navbar': !navbar,
+      'tabbar-labels-fixed': fix && tabbar === 'label'
     }, className)
     return (
       <div className={classes} {...props}>

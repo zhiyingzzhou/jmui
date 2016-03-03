@@ -11,12 +11,27 @@ export default class View extends Component {
     ui: PropTypes.object
   };
 
+  constructor (props) {
+    super(props)
+    this._tabbar = 'none'
+  }
+
   getChildContext () {
     return {
       ui: {
-        addNotification: (notification) => { this.addNotification(notification) }
+        addNotification: (notification) => { this.addNotification(notification) },
+        setTabbar: (type) => { this.setTabbar(type) },
+        getTabbar: () => { return this.getTabbar() }
       }
     }
+  }
+
+  setTabbar (type) {
+    this._type = type
+  }
+
+  getTabbar () {
+    return this._type
   }
 
   addNotification (notification) {

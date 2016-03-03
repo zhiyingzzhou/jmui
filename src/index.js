@@ -1,5 +1,6 @@
 export Navbar from './components/Bar/Navbar'
-export Toolbar from './components/Bar/Toolbar'
+export Tabbar from './components/Bar/Tabbar'
+export TabbarItem from './components/Bar/TabbarItem'
 export View from './components/Container/View'
 export Page from './components/Container/Page'
 export TransitionPages from './components/Container/TransitionPages'
