@@ -4,7 +4,7 @@ import classNames from 'classnames'
 export default class Page extends Component {
 
   static propTypes = {
-    fixed: PropTypes.bool,
+    fix: PropTypes.bool,
     children: PropTypes.node,
     className: PropTypes.string,
     navbar: PropTypes.node,
@@ -12,25 +12,25 @@ export default class Page extends Component {
   };
 
   static defaultProps = {
-    fixed: true
+    fix: true
   };
 
   render () {
-    const { children, fixed, className, navbar, toolbar, ...props } = this.props
+    const { children, fix, className, navbar, toolbar, ...props } = this.props
     const classes = classNames({
       'page': true,
-      'navbar-fixed': fixed && navbar,
-      'toolbar-fixed': fixed && toolbar
+      'navbar-fixed': fix && navbar,
+      'toolbar-fixed': fix && toolbar
     }, className)
     return (
       <div className={classes} {...props}>
-        {fixed && navbar}
+        {fix && navbar}
         <div className='page-content'>
-          {!fixed && navbar}
+          {!fix && navbar}
           {children}
-          {!fixed && toolbar}
+          {!fix && toolbar}
         </div>
-        {fixed && toolbar}
+        {fix && toolbar}
       </div>
     )
   }

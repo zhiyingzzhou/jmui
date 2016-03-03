@@ -43,12 +43,13 @@
   },
   "peerDependencies": {
     "react": "^0.14.2",
-    "react-dom": "^0.14.2"
+    "react-dom": "^0.14.2",
+    "react-addons-css-transition-group": "^0.14.2"
   },
   "devDependencies": {
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
-
+    "react-addons-css-transition-group": "^0.14.2",
     "babel-core": "*",
     "babel-eslint": "*",
     "babel-loader": "*",

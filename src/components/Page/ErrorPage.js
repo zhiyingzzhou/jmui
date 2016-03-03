@@ -69,7 +69,7 @@ export default class ErrorPage extends Component {
   render () {
     return (
       <Page
-        fixed
+        fix
         navbar={this.renderNavbar()}
         >
         <Block className='text-center'>

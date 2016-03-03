@@ -35,9 +35,7 @@ export default class View extends Component {
       <div className='wrapper'>
         <div className='views'>
           <div className='view'>
-            <div className='pages'>
             {children}
-            </div>
           </div>
         </div>
         {this.rendernNotifications()}
