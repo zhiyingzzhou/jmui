@@ -46,14 +46,15 @@ export default class Navbar extends Component {
   }
 
   renderLink (object, key = 0) {
-    const { text, icon, ...others } = object
+    const { text, icon, iconName, ...others } = object
     const classesLink = classNames({
       'link': true,
       'icon-only': !text
     })
     return (
       <a key={key} className={classesLink} {...others}>
-        {icon && <Icon name={icon} />}
+        {iconName && <Icon name={iconName} />}
+        {icon}
         {text}
       </a>
     )

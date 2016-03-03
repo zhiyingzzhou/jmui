@@ -27,7 +27,7 @@ export default class ErrorPage extends Component {
         <Navbar
           title={title}
           left={[{
-            icon: 'back',
+            iconName: 'back',
             text: '返回',
             onTouchTap: onBack
           }]}

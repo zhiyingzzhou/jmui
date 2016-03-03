@@ -27,7 +27,7 @@ export default class Button extends Component {
       [`color-${theme}`]: theme
     }, className)
     return (
-      <div className={classes} {...props}>{children}</div>
+      <a className={classes} {...props}>{children}</a>
     )
   }
 }
