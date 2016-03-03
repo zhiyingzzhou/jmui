@@ -29,7 +29,6 @@ export default class Item extends Component {
     const transitionEvent = whichTransitionEvent()
     const { notification } = this.props
     const element = ReactDOM.findDOMNode(this)
-    console.log(element)
     this._height = element.offsetHeight
     this._isMounted = true
 
