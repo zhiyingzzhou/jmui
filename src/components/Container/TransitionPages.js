@@ -25,8 +25,8 @@ export default class TransitionPages extends Component {
         component='div'
         className='pages'
         transitionName={`page-transition-${transition}`}
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={500}
+        transitionEnterTimeout={400}
+        transitionLeaveTimeout={400}
         >
           {React.cloneElement(this.props.children, {
             key: location.pathname

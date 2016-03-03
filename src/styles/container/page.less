@@ -28,23 +28,6 @@
     z-index: 1;
 }
 
-// Page Shadow
-.page-fake-shadow() {
-    position: absolute;
-    right: 100%;
-    top: 0;
-    width: 16px;
-    height: 100%;
-    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.01) 50%, rgba(0,0,0,0.2) 100%);
-    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.01) 50%, rgba(0,0,0,0.2) 100%);
-    z-index: -1;
-    content: '';
-    html.android & {
-        display: none;
-        .animation(none);
-    }
-}
-
 // Animations
 // -----------------------------------------------------------------------------
 
@@ -60,8 +43,8 @@
 
 @keyframes page-sfl-leave {
   to {
-    opacity: .75;
-    transform: translate3d(25%, 0, 0);
+    opacity: .9;
+    transform: translate3d(20%, 0, 0);
   }
 }
 
@@ -78,8 +61,8 @@
 
 @keyframes page-sfr-leave {
   to {
-    opacity: .75;
-    transform: translate3d(-25%, 0, 0);
+    opacity: .9;
+    transform: translate3d(-20%, 0, 0);
   }
 }
 
@@ -90,8 +73,8 @@
 // Reveal From Feft
 @keyframes page-rfl-enter {
   from {
-    opacity: .75;
-    transform: translate3d(75%, 0, 0);
+    opacity: .9;
+    transform: translate3d(80%, 0, 0);
   }
   to {
     opacity: 1;
@@ -113,8 +96,8 @@
 // Reveal From Right
 @keyframes page-rfr-enter {
   from {
-    opacity: .75;
-    transform: translate3d(-25%, 0, 0);
+    opacity: .9;
+    transform: translate3d(-20%, 0, 0);
   }
   to {
     opacity: 1;
@@ -124,7 +107,7 @@
 
 @keyframes page-rfr-leave {
   to {
-    opacity: 0.75;
+    opacity: 0.9;
     transform: translate3d(100%, 0, 0);
   }
 }
@@ -151,8 +134,7 @@
 .page-transition-sfl-leave,
 .page-transition-sfr-enter-active,
 .page-transition-sfr-leave {
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier(.36, .66, .04, 1);
+  animation-duration: .4s;
   animation-fill-mode: forwards;
 }
 
@@ -195,8 +177,7 @@
 .page-transition-rfl-leave,
 .page-transition-rfr-enter-active,
 .page-transition-rfr-leave {
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier(.36, .66, .04, 1);
+  animation-duration: .4s;
   animation-fill-mode: forwards;
 }
 
