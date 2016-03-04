@@ -29,7 +29,7 @@ export default class ErrorPage extends Component {
           left={[{
             iconName: 'back',
             text: '返回',
-            onTouchTap: onBack
+            onClick: onBack
           }]}
         />
       )
@@ -60,7 +60,7 @@ export default class ErrorPage extends Component {
     const { onIndex } = this.props
     if (onIndex) {
       return (
-        <Button fill big onTouchTap={onIndex}>返回首页</Button>
+        <Button fill big onClick={onIndex}>返回首页</Button>
       )
     }
     return null

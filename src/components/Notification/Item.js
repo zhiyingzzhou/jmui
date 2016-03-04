@@ -120,7 +120,7 @@ export default class Item extends Component {
                 <div className='item-title'>{notification.title}</div>
               }
               <div className='item-after'>
-                <a onTouchTap={::this.dismiss} className='close-notification'>
+                <a onClick={::this.dismiss} className='close-notification'>
                   <span></span>
                 </a>
               </div>

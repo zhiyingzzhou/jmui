@@ -26,7 +26,7 @@ export default class Tabbar extends Component {
     const { children, tool, visible } = this.props
     const { ui } = this.context
     let hasLabel = false
-    if (!tool && Array.isArray(children)) {
+    if (!tool && children) {
       React.Children.forEach(children, (child) => {
         if (typeof child === 'object' && child.type === TabbarItem) {
           if (child.props.label) {
