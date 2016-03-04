@@ -6,7 +6,12 @@ export default class Form extends Component {
   static propTypes = {
     title: PropTypes.string,
     children: PropTypes.node,
-    className: PropTypes.string
+    className: PropTypes.string,
+    multiLine: PropTypes.bool
+  };
+
+  static defaultProps = {
+    multiLine: false
   };
 
   renderTitle () {
@@ -20,12 +25,15 @@ export default class Form extends Component {
   }
 
   render () {
-    const { className, children, ...props } = this.props
-    const classes = classNames(className)
+    const { className, children, multiLine, title, ...props } = this.props
+    const classes = classNames({
+      'list-block': true,
+      'media-list': !!multiLine
+    })
     return (
-      <form className={classes} {...props}>
+      <form className={className} {...props}>
         {this.renderTitle()}
-        <div className='list-block'>
+        <div className={classes}>
           <ul>
             {children}
           </ul>

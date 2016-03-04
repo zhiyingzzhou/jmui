@@ -11,7 +11,7 @@ export default class TextField extends Component {
 
   static defaultProps = {
     type: 'text'
-  }
+  };
 
   renderIcon () {
     const { icon } = this.props
