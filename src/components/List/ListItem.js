@@ -11,6 +11,7 @@ export default class ListItem extends Component {
     subTitle: PropTypes.string,
     text: PropTypes.node,
     onClick: PropTypes.func,
+    href: PropTypes.string,
     className: PropTypes.string
   };
 
@@ -69,16 +70,22 @@ export default class ListItem extends Component {
   }
 
   render () {
-    const { onClick } = this.props
+    const { onClick, href, className } = this.props
     return (
-      <li>
+      <li className={className}>
         {onClick && typeof onClick === 'function' &&
           <a onClick={::this.handleClick} className='item-link item-content'>
             {this.renderIcon()}
             {this.renderInner()}
           </a>
         }
-        {!onClick || typeof onClick !== 'function' &&
+        {href &&
+          <a href={href} className='item-link item-content'>
+            {this.renderIcon()}
+            {this.renderInner()}
+          </a>
+        }
+        {!onClick && !href &&
           <div className='item-content'>
             {this.renderIcon()}
             {this.renderInner()}
