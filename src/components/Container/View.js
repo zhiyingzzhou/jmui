@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import NotificationSystem from '../Notification/System'
+import ModalSystem from '../Modal/System'
+import IndicatorSystem from '../Indicator/System'
 
 export default class View extends Component {
 
@@ -21,7 +23,11 @@ export default class View extends Component {
       ui: {
         addNotification: (notification) => { this.addNotification(notification) },
         setTabbar: (type) => { this.setTabbar(type) },
-        getTabbar: () => { return this.getTabbar() }
+        getTabbar: () => { return this.getTabbar() },
+        showPreloader: () => { this.showPreloader() },
+        hidePreloader: () => { this.hidePreloader() },
+        showModal: (modal) => { this.showModal(modal) },
+        hideModal: () => { this.hideModal() }
       }
     }
   }
@@ -38,10 +44,20 @@ export default class View extends Component {
     this.refs['notificationSystem'].addNotification(notification)
   }
 
-  rendernNotifications () {
-    return (
-      <NotificationSystem ref='notificationSystem' />
-    )
+  showPreloader () {
+    this.refs['indicatorSystem'].showPreloader()
+  }
+
+  hidePreloader () {
+    this.refs['indicatorSystem'].hidePreloader()
+  }
+
+  showModal (modal) {
+    this.refs['modalSystem'].showModal(modal)
+  }
+
+  hideModal () {
+    this.refs['modalSystem'].hideModal()
   }
 
   render () {
@@ -53,7 +69,9 @@ export default class View extends Component {
             {children}
           </div>
         </div>
-        {this.rendernNotifications()}
+        <NotificationSystem ref='notificationSystem' />
+        <ModalSystem ref='modalSystem' />
+        <IndicatorSystem ref='indicatorSystem' />
       </div>
     )
   }
