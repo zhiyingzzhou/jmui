@@ -6,6 +6,7 @@
     overflow: hidden;
     background: #000;
 }
+
 .page {
     box-sizing: border-box;
     position: absolute;
@@ -41,10 +42,26 @@
   }
 }
 
+@-webkit-keyframes page-sfl-enter {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes page-sfl-leave {
   to {
     opacity: .9;
     transform: translate3d(20%, 0, 0);
+  }
+}
+
+@-webkit-keyframes page-sfl-leave {
+  to {
+    opacity: .9;
+    -webkit-transform: translate3d(20%, 0, 0);
   }
 }
 
@@ -59,10 +76,26 @@
   }
 }
 
+@-webkit-keyframes page-sfr-enter {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes page-sfr-leave {
   to {
     opacity: .9;
     transform: translate3d(-20%, 0, 0);
+  }
+}
+
+@-webkit-keyframes page-sfr-leave {
+  to {
+    opacity: .9;
+    -webkit-transform: translate3d(-20%, 0, 0);
   }
 }
 
@@ -82,6 +115,17 @@
   }
 }
 
+@-webkit-keyframes page-rfl-enter {
+  from {
+    opacity: .9;
+    -webkit-transform: translate3d(80%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes page-rfl-leave {
   from {
     opacity: 1;
@@ -90,6 +134,17 @@
   to {
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes page-rfl-leave {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
   }
 }
 
@@ -105,10 +160,28 @@
   }
 }
 
+@-webkit-keyframes page-rfr-enter {
+  from {
+    opacity: .9;
+    -webkit-transform: translate3d(-20%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes page-rfr-leave {
   to {
     opacity: 0.9;
     transform: translate3d(100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes page-rfr-leave {
+  to {
+    opacity: 0.9;
+    -webkit-transform: translate3d(100%, 0, 0);
   }
 }
 
@@ -134,26 +207,25 @@
 .page-transition-sfl-leave,
 .page-transition-sfr-enter-active,
 .page-transition-sfr-leave {
-  animation-duration: .4s;
-  animation-fill-mode: forwards;
+  .animation-duration(.4s);
+  .animation-fill-mode(forwards);
 }
 
 .page-transition-sfr-enter-active {
-  animation-name: page-sfr-enter;
+  .animation-name(page-sfr-enter);
 }
 
 .page-transition-sfl-enter-active {
-  animation-name: page-sfl-enter;
+  .animation-name(page-sfl-enter);
 }
 
 .page-transition-sfr-leave {
-  animation-name: page-sfr-leave;
+  .animation-name(page-sfr-leave);
 }
 
 .page-transition-sfl-leave {
-  animation-name: page-sfl-leave;
+  .animation-name(page-sfl-leave);
 }
-
 
 // Transition: Reveal
 // rfr: reveal from right
@@ -177,22 +249,22 @@
 .page-transition-rfl-leave,
 .page-transition-rfr-enter-active,
 .page-transition-rfr-leave {
-  animation-duration: .4s;
-  animation-fill-mode: forwards;
+  .animation-duration(.4s);
+  .animation-fill-mode(forwards);
 }
 
 .page-transition-rfr-enter-active {
-  animation-name: page-rfr-enter;
+  .animation-name(page-rfr-enter);
 }
 
 .page-transition-rfr-leave {
-  animation-name: page-rfr-leave;
+  .animation-name(page-rfr-leave);
 }
 
 .page-transition-rfl-enter-active {
-  animation-name: page-rfl-enter;
+  .animation-name(page-rfl-enter);
 }
 
 .page-transition-rfl-leave {
-  animation-name: page-rfl-leave;
+  .animation-name(page-rfl-leave);
 }

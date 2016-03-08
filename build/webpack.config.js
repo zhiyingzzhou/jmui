@@ -2,7 +2,6 @@
 
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var cssnano = require('cssnano')
 var path = require('path')
 
 var extractTextWebpackPlugin = new ExtractTextPlugin('styles/[name].css')
@@ -29,12 +28,23 @@ module.exports = {
     }
   },
   entry: {
-    main: path.resolve(__dirname, '../src/index.js'),
-    'theme.gray': path.resolve(__dirname, '../src/styles/theme/gray.less'),
-    'theme.white': path.resolve(__dirname, '../src/styles/theme/white.less')
+    'jmui': path.resolve(__dirname, '../src/index.js'),
+    'jmui.core': path.resolve(__dirname, '../src/styles/jmui.less'),
+    'jmui.layout.dark': path.resolve(__dirname, '../src/styles/layout/dark.less'),
+    'jmui.layout.white': path.resolve(__dirname, '../src/styles/layout/white.less'),
+    'jmui.theme.gray': path.resolve(__dirname, '../src/styles/theme/gray.less'),
+    'jmui.theme.white': path.resolve(__dirname, '../src/styles/theme/white.less'),
+    'jmui.theme.black': path.resolve(__dirname, '../src/styles/theme/black.less'),
+    'jmui.theme.green': path.resolve(__dirname, '../src/styles/theme/green.less'),
+    'jmui.theme.lightblue': path.resolve(__dirname, '../src/styles/theme/lightblue.less'),
+    'jmui.theme.orange': path.resolve(__dirname, '../src/styles/theme/orange.less'),
+    'jmui.theme.pink': path.resolve(__dirname, '../src/styles/theme/pink.less'),
+    'jmui.theme.red': path.resolve(__dirname, '../src/styles/theme/red.less'),
+    'jmui.theme.yellow': path.resolve(__dirname, '../src/styles/theme/yellow.less'),
+    'jmui.theme.blue': path.resolve(__dirname, '../src/styles/theme/blue.less')
   },
   output: {
-    filename: 'jmui.min.js',
+    filename: '[name].min.js',
     path: path.resolve(__dirname, '../dist'),
     library: 'jmui',
     libraryTarget: 'umd'
@@ -54,58 +64,15 @@ module.exports = {
         loader: 'babel',
         query: {
           cacheDirectory: true,
-          plugins: ['transform-runtime'],
           presets: ['es2015', 'react', 'stage-0']
         }
       },
       {
         test: /\.less$/,
-        loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
-      },
-      {
-        test: /\.css$/,
-        loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader')
-      },
-      {
-        test: /\.woff(\?.*)?$/,
-        loader: 'url?name=[path][name].[ext]&limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.woff2(\?.*)?$/,
-        loader: 'url?name=[path][name].[ext]&limit=10000&mimetype=application/font-woff2'
-      },
-      {
-        test: /\.ttf(\?.*)?$/,
-        loader: 'url?name=[path][name].[ext]&limit=10000&mimetype=application/octet-stream'
-      },
-      {
-        test: /\.eot(\?.*)?$/,
-        loader: 'file?name=[path][name].[ext]'
-      },
-      {
-        test: /\.svg(\?.*)?$/,
-        loader: 'url?name=[path][name].[ext]&limit=10000&mimetype=image/svg+xml'
-      },
-      {
-        test: /\.(png|jpg)$/,
-        loader: 'url?limit=8192'
+        loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader!less-loader')
       }
     ]
   },
-  postcss: [
-    cssnano({
-      sourcemap: true,
-      autoprefixer: {
-        add: true,
-        remove: true,
-        browsers: ['last 2 versions']
-      },
-      safe: true,
-      discardComments: {
-        removeAll: true
-      }
-    })
-  ],
   eslint: {
     configFile: path.resolve(__dirname, '../.eslintrc')
   },
