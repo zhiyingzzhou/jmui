@@ -12,6 +12,7 @@
     "url": "https://github.com/junewinds/jmui/issues"
   },
   "homepage": "https://github.com/junewinds/jmui",
+  "author": "Jimmy Chou <zliangyu@gmail.com>",
   "keywords": [
     "react",
     "webpack",
@@ -88,6 +89,7 @@
     "gitbook": "^2.1.2",
     "phantomjs-prebuilt": "^2.1.5",
     "codecov": "^1.0.1",
+    "rimraf": "^2.5.2",
 
     "karma": "^0.13.21",
     "karma-coverage": "^0.5.5",
