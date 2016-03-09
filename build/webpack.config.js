@@ -29,19 +29,19 @@ module.exports = {
   },
   entry: {
     'jmui': path.resolve(__dirname, '../src/index.js'),
-    'jmui.core': path.resolve(__dirname, '../src/styles/jmui.less'),
-    'jmui.layout.dark': path.resolve(__dirname, '../src/styles/layout/dark.less'),
-    'jmui.layout.white': path.resolve(__dirname, '../src/styles/layout/white.less'),
-    'jmui.theme.gray': path.resolve(__dirname, '../src/styles/theme/gray.less'),
-    'jmui.theme.white': path.resolve(__dirname, '../src/styles/theme/white.less'),
-    'jmui.theme.black': path.resolve(__dirname, '../src/styles/theme/black.less'),
-    'jmui.theme.green': path.resolve(__dirname, '../src/styles/theme/green.less'),
-    'jmui.theme.lightblue': path.resolve(__dirname, '../src/styles/theme/lightblue.less'),
-    'jmui.theme.orange': path.resolve(__dirname, '../src/styles/theme/orange.less'),
-    'jmui.theme.pink': path.resolve(__dirname, '../src/styles/theme/pink.less'),
-    'jmui.theme.red': path.resolve(__dirname, '../src/styles/theme/red.less'),
-    'jmui.theme.yellow': path.resolve(__dirname, '../src/styles/theme/yellow.less'),
-    'jmui.theme.blue': path.resolve(__dirname, '../src/styles/theme/blue.less')
+    'jmui.ios.core': path.resolve(__dirname, '../src/styles/ios/jmui.less'),
+    'jmui.ios.layout.dark': path.resolve(__dirname, '../src/styles/ios/layout/dark.less'),
+    'jmui.ios.layout.white': path.resolve(__dirname, '../src/styles/ios/layout/white.less'),
+    'jmui.ios.theme.gray': path.resolve(__dirname, '../src/styles/ios/theme/gray.less'),
+    'jmui.ios.theme.white': path.resolve(__dirname, '../src/styles/ios/theme/white.less'),
+    'jmui.ios.theme.black': path.resolve(__dirname, '../src/styles/ios/theme/black.less'),
+    'jmui.ios.theme.green': path.resolve(__dirname, '../src/styles/ios/theme/green.less'),
+    'jmui.ios.theme.lightblue': path.resolve(__dirname, '../src/styles/ios/theme/lightblue.less'),
+    'jmui.ios.theme.orange': path.resolve(__dirname, '../src/styles/ios/theme/orange.less'),
+    'jmui.ios.theme.pink': path.resolve(__dirname, '../src/styles/ios/theme/pink.less'),
+    'jmui.ios.theme.red': path.resolve(__dirname, '../src/styles/ios/theme/red.less'),
+    'jmui.ios.theme.yellow': path.resolve(__dirname, '../src/styles/ios/theme/yellow.less'),
+    'jmui.ios.theme.blue': path.resolve(__dirname, '../src/styles/ios/theme/blue.less')
   },
   output: {
     filename: '[name].min.js',
@@ -70,6 +70,10 @@ module.exports = {
       {
         test: /\.less$/,
         loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader!less-loader')
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },
@@ -77,7 +81,7 @@ module.exports = {
     configFile: path.resolve(__dirname, '../.eslintrc')
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.json']
   },
   plugins: [
     extractTextWebpackPlugin,
