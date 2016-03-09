@@ -1,20 +1,19 @@
 import React from 'react'
-import TestUtils from 'react-addons-test-utils'
-import expect from 'expect'
-import Navbar from '../src'
-
-const renderer = TestUtils.createRenderer()
+import { shallow, mount } from 'enzyme'
+import { Navbar } from 'jmui'
 
 describe('Navbar', () => {
-  let tree
-
-  beforeEach(() => {
-    renderer.render(<Navbar />)
-    tree = renderer.getRenderOutput()
+  it('should work with no props', () => {
+    expect(shallow(<Navbar />).is('.navbar')).to.be.true
   })
 
-  it('should render', () => {
-    console.log(tree)
-    expect(tree.type).toEqual(Navbar)
+  it('should has title', () => {
+    expect(shallow(<Navbar />).find('.center')).to.have.length(1)
+  })
+
+  it('called componentDidMount', () => {
+    sinon.spy(Navbar.prototype, 'componentDidMount')
+    mount(<Navbar title='test' />)
+    expect(Navbar.prototype.componentDidMount.calledOnce).to.be.true
   })
 })

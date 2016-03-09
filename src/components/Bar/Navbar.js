@@ -25,6 +25,9 @@ export default class Navbar extends Component {
     const right = ReactDOM.findDOMNode(this.refs['right'])
     const leftWidth = getDomWidth(left, true)
     const centerWidth = getDomWidth(center, true)
+    if (centerWidth === 0) {
+      return
+    }
     const rightWidth = getDomWidth(right, true)
     const navbarStyle = getComputedStyle(navbar)
     const navbarWidth = navbar.offsetWidth - parseInt(navbarStyle.paddingLeft, 10) - parseInt(navbarStyle.paddingRight, 10)
