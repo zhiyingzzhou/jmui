@@ -33,6 +33,40 @@ Requirements
 
 * node `^4.3.0`
 * npm `^3.0.0`
+* react `^0.14.0`
+
+Install
+-------
+
+```bash
+npm install jmui
+```
+
+Usage
+-----
+
+```jsx
+import { Button } from 'jmui'
+ReactDOM.render(<Button />, mountNode);
+```
+
+Import style:
+
+- IOS theme
+
+```jsx
+import 'jmui/styles/jmui.ios.core.css'
+```
+
+Import color schema:
+
+- Blue
+
+```jsx
+import 'jmui/styles/jmui.ios.theme.blue.css'
+```
+
+- All colors: ['black', 'gray', 'blue', 'white', 'green', 'lightblue', 'orange', 'pink', 'red', 'yellow']
 
 TODO
 ----

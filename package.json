@@ -3,7 +3,7 @@
   "description": "Mobile Web UI Framework powered by React",
   "author": "Jimmy Chou <zliangyu@gmail.com>",
   "license": "MIT",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/junewinds/jmui.git"
@@ -39,6 +39,8 @@
     "test": "karma start build/karma.conf.js --single-run",
     "test:watch": "karma start build/karma.conf.js",
     "codecov": "cat coverage/lcov/lcov.info | codecov",
+    "kitchensink:ios": "webpack --config build/webpack.kitchensink.ios.config.js",
+    "kitchensink:ios:dev": "webpack --config build/webpack.kitchensink.ios.config.js",
     "preversion": "npm run clean",
     "version": "npm run build",
     "postversion": "git push && git push --tags && npm run clean",
