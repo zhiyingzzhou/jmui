@@ -1,6 +1,6 @@
 {
   "name": "jmui",
-  "description": "Mobile Web UI Framework powered by React",
+  "description": "React Mobile Functional UI Components",
   "author": "Jimmy Chou <zliangyu@gmail.com>",
   "license": "MIT",
   "version": "0.1.4",
@@ -33,14 +33,14 @@
     "lint": "eslint src",
     "build:watch": "babel src --watch --out-dir lib",
     "build:lib": "babel src --out-dir lib",
-    "build:umd": "webpack --config build/webpack.config.js --progress",
+    "build:umd": "webpack --config build/webpack.config.js",
     "build:file": "node build/publish.js",
     "build": "npm run build:lib && npm run build:umd && npm run build:file",
     "test": "karma start build/karma.conf.js --single-run",
     "test:watch": "karma start build/karma.conf.js",
     "codecov": "cat coverage/lcov/lcov.info | codecov",
     "kitchensink:ios": "webpack --config build/webpack.kitchensink.ios.config.js",
-    "kitchensink:ios:dev": "webpack --config build/webpack.kitchensink.ios.config.js",
+    "kitchensink:ios:dev": "node build/kitchenSinkIOSDevServer.js",
     "preversion": "npm run clean",
     "version": "npm run build",
     "postversion": "git push && git push --tags && npm run clean",
@@ -92,6 +92,8 @@
     "phantomjs-prebuilt": "^2.1.5",
     "codecov": "^1.0.1",
     "rimraf": "^2.5.2",
+    "express": "^4.13.4",
+    "react-router": "^2.0.0",
 
     "karma": "^0.13.21",
     "karma-coverage": "^0.5.5",
@@ -105,6 +107,8 @@
     "css-loader": "^0.23.1",
     "less-loader": "^2.2.2",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "file-loader": "^0.8.5",
     "babel-loader": "^6.2.4",
     "eslint-loader": "^1.3.0",
     "isparta-loader": "^2.0.0",
@@ -112,7 +116,10 @@
     "json-loader": "^0.5.4",
 
     "extract-text-webpack-plugin": "^1.0.1",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.5.1",
+    "webpack-hot-middleware": "^2.9.1",
+    "html-webpack-plugin": "^2.9.0"
   },
   "engines": {
     "node": ">=4.3.0",

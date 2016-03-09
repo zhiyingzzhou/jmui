@@ -2,17 +2,19 @@
 
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 
 var extractTextWebpackPlugin = new ExtractTextPlugin('[name].css')
 
 module.exports = {
   entry: {
-    'ios': path.resolve(__dirname, '../kitchensink/ios/index.js')
+    'kitchensink.ios': path.resolve(__dirname, '../kitchensink/ios/index.js')
   },
   output: {
     filename: '[name].min.js',
-    path: path.resolve(__dirname, '../dist/kitchensink/ios')
+    path: path.resolve(__dirname, '../dist/kitchensink/ios'),
+    publishPath: '/'
   },
   module: {
     preLoaders: [
@@ -39,14 +41,24 @@ module.exports = {
       {
         test: /\.css$/,
         loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader')
-      }
+      },
+      { test: /\.woff(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff' },
+      { test: /\.woff2(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff2' },
+      { test: /\.otf(\?.*)?$/, loader: 'file?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=font/opentype' },
+      { test: /\.ttf(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/octet-stream' },
+      { test: /\.eot(\?.*)?$/, loader: 'file?prefix=fonts/&name=[path][name].[ext]' },
+      { test: /\.svg(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=image/svg+xml' },
+      { test: /\.(png|jpg)$/, loader: 'url?limit=8192' }
     ]
   },
   eslint: {
     configFile: path.resolve(__dirname, '../.eslintrc')
   },
   resolve: {
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json'],
+    alias: {
+      'jmui': path.resolve(__dirname, '../src')
+    }
   },
   plugins: [
     extractTextWebpackPlugin,
@@ -58,6 +70,15 @@ module.exports = {
       compressor: {
         screw_ie8: true,
         warnings: false
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../kitchensink/ios/index.html'),
+      hash: false,
+      filename: 'index.html',
+      inject: 'body',
+      minify: {
+        collapseWhitespace: true
       }
     })
   ]
