@@ -37,6 +37,7 @@
     "build": "npm run build:lib && npm run build:umd && npm run build:file",
     "test": "karma start build/karma.conf.js --single-run",
     "test:watch": "karma start build/karma.conf.js",
+    "codecov": "cat coverage/lcov/lcov.info | codecov",
     "preversion": "npm run clean",
     "version": "npm run build",
     "postversion": "git push && git push --tags && npm run clean",
@@ -64,7 +65,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.6.5",
     "babel-runtime": "^6.6.0",
-    "babel-eslint": "^6.0.0-beta.2",
+    "babel-eslint": "6.0.0-beta.2",
 
     "eslint": "^2.3.0",
     "eslint-config-standard": "^5.1.0",
@@ -83,6 +84,10 @@
     "cheerio": "^0.20.0",
     "mocha": "^2.4.5",
     "chai": "^3.5.0",
+    "gh-pages": "0.11.0",
+    "gitbook": "^2.1.2",
+    "phantomjs-prebuilt": "^2.1.5",
+    "codecov": "^1.0.1",
 
     "karma": "^0.13.21",
     "karma-coverage": "^0.5.5",
