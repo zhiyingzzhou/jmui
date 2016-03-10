@@ -18,7 +18,21 @@ export default class Index extends Component {
       <Page
         fix
         navbar={<Navbar title='Kitchen Sink' />}>
-        <List>
+        <List label='更多组件已在jmui中实现，持续添加到演示中'>
+          <List.Group title='组件'>
+            <List.Item
+              icon={<span className='iconfont icon-anniu' />}
+              title='按钮'
+              after='Button'
+              onClick={this.handleJump.bind(this, '/components/button')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-biaodan' />}
+              title='表单'
+              after='Form'
+              onClick={this.handleJump.bind(this, '/components/form')}
+            />
+          </List.Group>
           <List.Group title='容器'>
             <List.Item
               icon={<span className='iconfont icon-fenleizukuaier' />}
@@ -41,7 +55,7 @@ export default class Index extends Component {
               onClick={this.handleJump.bind(this, '/components/view')}
             />
             <List.Item
-              icon={<span className='iconfont icon-wenjian1' />}
+              icon={<span className='iconfont icon-pages' />}
               title='静态页面组'
               after='Pages'
               onClick={this.handleJump.bind(this, '/components/pages')}

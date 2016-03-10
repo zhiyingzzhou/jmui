@@ -16,8 +16,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-shouji:before { content: "\e600"; }
-.icon-wenjian:before { content: "\e606"; }
-.icon-wenjian1:before { content: "\e607"; }
+.icon-pages:before { content: "\e606"; }
+.icon-riqi:before { content: "\e601"; }
+.icon-wenjian:before { content: "\e607"; }
+.icon-yonghu:before { content: "\e605"; }
+.icon-anniu:before { content: "\e608"; }
+.icon-duoxuan12px:before { content: "\e609"; }
+.icon-mima:before { content: "\e60a"; }
 .icon-qiehuan:before { content: "\e602"; }
 .icon-fenleizukuaier:before { content: "\e603"; }
 .icon-wanggetu:before { content: "\e604"; }
+.icon-biaodan:before { content: "\e610"; }
+.icon-danxuan:before { content: "\e60b"; }

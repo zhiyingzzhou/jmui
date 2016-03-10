@@ -7,11 +7,13 @@ export default class Form extends Component {
     title: PropTypes.string,
     children: PropTypes.node,
     className: PropTypes.string,
-    multiLine: PropTypes.bool
+    multiLine: PropTypes.bool,
+    inset: PropTypes.bool
   };
 
   static defaultProps = {
-    multiLine: false
+    multiLine: false,
+    inset: false
   };
 
   renderTitle () {
@@ -25,9 +27,10 @@ export default class Form extends Component {
   }
 
   render () {
-    const { className, children, multiLine, title, ...props } = this.props
+    const { className, children, multiLine, title, inset, ...props } = this.props
     const classes = classNames({
       'list-block': true,
+      'inset': !!inset,
       'media-list': !!multiLine
     })
     return (
