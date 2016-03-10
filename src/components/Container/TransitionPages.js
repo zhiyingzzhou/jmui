@@ -8,7 +8,7 @@ export default class TransitionPages extends Component {
     location: PropTypes.object
   };
 
-  static getState (type = 'reval') {
+  static getState (type = 'left') {
     return {
       transition: type
     }
@@ -17,8 +17,21 @@ export default class TransitionPages extends Component {
   render () {
     const { location } = this.props
     let transition = 'sfr'
-    if (location.state && location.state.transition && location.state.transition === 'reval') {
-      transition = 'rfr'
+    if (location.state && location.state.transition) {
+      switch (location.state.transition) {
+        case 'right':
+          transition = 'sfr'
+          break
+        case 'left':
+          transition = 'rfr'
+          break
+        case 'up':
+          transition = 'sfb'
+          break
+        case 'down':
+          transition = 'rfb'
+          break
+      }
     }
     return (
       <ReactCSSTransitionGroup
