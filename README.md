@@ -9,8 +9,8 @@ React Mobile Functional UI Components
 Features
 --------
 
-* Design for mobile
-* An enterprise-class design language and high quality UI style
+* Designed for mobile usage
+* An Enterprise-class design language and high quality UI style
 * Include IOS and Material Themes base on Framework7(https://github.com/nolimits4web/Framework7)
 * Rich library of mobile UI components
   * view

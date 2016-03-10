@@ -6,8 +6,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 
 var extractTextWebpackPlugin = new ExtractTextPlugin('[name].[contenthash].css')
+var env = process.env.NODE_ENV || 'development'
 
-module.exports = {
+var webpackConfig = {
   entry: {
     'kitchensink.ios': path.resolve(__dirname, '../kitchensink/ios/index.js')
   },
@@ -64,13 +65,7 @@ module.exports = {
     extractTextWebpackPlugin,
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        screw_ie8: true,
-        warnings: false
-      }
+      'process.env.NODE_ENV': JSON.stringify(env)
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../kitchensink/ios/index.html'),
@@ -83,3 +78,14 @@ module.exports = {
     })
   ]
 }
+
+if (env === 'production') {
+  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compressor: {
+      screw_ie8: true,
+      warnings: false
+    }
+  }))
+}
+
+module.exports = webpackConfig
