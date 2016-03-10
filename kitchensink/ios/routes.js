@@ -12,6 +12,8 @@ export default function getRoutes () {
         <Route path='transitionpagesright' component={require('./views/Components/TransitionPagesRight').default} />
         <Route path='transitionpagesup' component={require('./views/Components/TransitionPagesUp').default} />
         <Route path='page' component={require('./views/Components/Page').default} />
+        <Route path='block' component={require('./views/Components/Block').default} />
+        <Route path='grid' component={require('./views/Components/Grid').default} />
       </Route>
       <Route path='*' component={require('./views/NotFound').default} status={404} />
     </Route>

@@ -7,7 +7,7 @@ export default class Block extends Component {
     className: PropTypes.string,
     children: PropTypes.node,
     highlight: PropTypes.bool,
-    inset: PropTypes.string,
+    inset: PropTypes.bool,
     title: PropTypes.string
   };
 

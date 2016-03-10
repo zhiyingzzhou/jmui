@@ -21,6 +21,20 @@ export default class Index extends Component {
         <List>
           <List.Group title='容器'>
             <List.Item
+              icon={<span className='iconfont icon-fenleizukuaier' />}
+              title='区块'
+              after='Block'
+              onClick={this.handleJump.bind(this, '/components/block')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-wanggetu' />}
+              title='网格'
+              after='Grid'
+              onClick={this.handleJump.bind(this, '/components/grid')}
+            />
+          </List.Group>
+          <List.Group title='布局'>
+            <List.Item
               icon={<span className='iconfont icon-shouji' />}
               title='视图'
               after='View'
@@ -43,18 +57,6 @@ export default class Index extends Component {
               title='页面'
               after='Page'
               onClick={this.handleJump.bind(this, '/components/page')}
-            />
-            <List.Item
-              icon={<span className='iconfont icon-fenleizukuaier' />}
-              title='区块'
-              after='Block'
-              onClick={this.handleJump.bind(this, '/components/block')}
-            />
-            <List.Item
-              icon={<span className='iconfont icon-wanggetu' />}
-              title='网格'
-              after='Grid'
-              onClick={this.handleJump.bind(this, '/components/grid')}
             />
           </List.Group>
         </List>

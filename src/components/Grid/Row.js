@@ -6,18 +6,18 @@ export default class Row extends Component {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
-    noGutter: PropTypes.bool
+    gutter: PropTypes.bool
   };
 
   static defaultProps = {
-    noGutter: false
+    gutter: true
   };
 
   render () {
-    const { className, children, noGutter, ...props } = this.props
+    const { className, children, gutter, ...props } = this.props
     const classes = classNames({
       'row': true,
-      'no-gutter': !!noGutter
+      'no-gutter': !gutter
     }, className)
     return (
       <div className={classes} {...props}>{children}</div>
