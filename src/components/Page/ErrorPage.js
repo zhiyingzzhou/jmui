@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Page from '../Container/Page'
+import Page from '../Layout/Page'
 import Navbar from '../Bar/Navbar'
 import Button from '../Button/Button'
 import Block from '../Container/Block'
