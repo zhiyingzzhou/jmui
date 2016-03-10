@@ -5,15 +5,15 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 
-var extractTextWebpackPlugin = new ExtractTextPlugin('[name].css')
+var extractTextWebpackPlugin = new ExtractTextPlugin('[name].[contenthash].css')
 
 module.exports = {
   entry: {
     'kitchensink.ios': path.resolve(__dirname, '../kitchensink/ios/index.js')
   },
   output: {
-    filename: '[name].min.js',
-    path: path.resolve(__dirname, '../dist/kitchensink/ios'),
+    filename: '[name].[hash].min.js',
+    path: path.resolve(__dirname, '../site/kitchensink/ios'),
     publishPath: '/'
   },
   module: {
@@ -42,13 +42,13 @@ module.exports = {
         test: /\.css$/,
         loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader')
       },
-      { test: /\.woff(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff' },
-      { test: /\.woff2(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff2' },
-      { test: /\.otf(\?.*)?$/, loader: 'file?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=font/opentype' },
-      { test: /\.ttf(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/octet-stream' },
-      { test: /\.eot(\?.*)?$/, loader: 'file?prefix=fonts/&name=[path][name].[ext]' },
-      { test: /\.svg(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=image/svg+xml' },
-      { test: /\.(png|jpg)$/, loader: 'url?limit=8192' }
+      { test: /\.woff(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
+      { test: /\.woff2(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
+      { test: /\.otf(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
+      { test: /\.ttf(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
+      { test: /\.eot(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
+      { test: /\.svg(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
+      { test: /\.(png|jpg)$/, loader: 'file?prefix=[name].[contenthash].[ext]' }
     ]
   },
   eslint: {

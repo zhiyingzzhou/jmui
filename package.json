@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/junewinds/jmui/issues"
   },
-  "homepage": "https://github.com/junewinds/jmui",
+  "homepage": "https://junewinds.github.io/jmui",
   "author": "Jimmy Chou <zliangyu@gmail.com>",
   "keywords": [
     "react",
@@ -30,6 +30,7 @@
   ],
   "scripts": {
     "clean": "rimraf lib dist",
+    "clean:kitchensink": "rimraf site/kitchensink",
     "lint": "eslint src",
     "build:watch": "babel src --watch --out-dir lib",
     "build:lib": "babel src --out-dir lib",
@@ -44,7 +45,9 @@
     "preversion": "npm run clean",
     "version": "npm run build",
     "postversion": "git push && git push --tags && npm run clean",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run clean && npm run build",
+    "site:dev": "node build/siteDevServer.js",
+    "site": "npm run clean:kitchensink && npm run kitchensink:ios && node build/ghpages.js"
   },
   "dependencies": {
     "dom-helpers": "^2.4.0",
@@ -107,7 +110,6 @@
     "css-loader": "^0.23.1",
     "less-loader": "^2.2.2",
     "style-loader": "^0.13.0",
-    "url-loader": "^0.5.7",
     "file-loader": "^0.8.5",
     "babel-loader": "^6.2.4",
     "eslint-loader": "^1.3.0",

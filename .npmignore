@@ -3,10 +3,12 @@
 .idea
 .npmignore
 .travis.yml
+.editorconfig
 jsconfig.json
 src/*
 buid/*
 node_modules/*
 test/*
+site/*
 coverage/*
 kitchensink/*
