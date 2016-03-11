@@ -43,13 +43,13 @@ var webpackConfig = {
         test: /\.css$/,
         loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader')
       },
-      { test: /\.woff(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
-      { test: /\.woff2(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
-      { test: /\.otf(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
-      { test: /\.ttf(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
-      { test: /\.eot(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
-      { test: /\.svg(\?.*)?$/, loader: 'file?prefix=[name].[contenthash].[ext]' },
-      { test: /\.(png|jpg)$/, loader: 'file?prefix=[name].[contenthash].[ext]' }
+      { test: /\.woff(\?.*)?$/, loader: 'file?name=[name].[hash].[ext]' },
+      { test: /\.woff2(\?.*)?$/, loader: 'file?name=[name].[hash].[ext]' },
+      { test: /\.otf(\?.*)?$/, loader: 'file?name=[name].[hash].[ext]' },
+      { test: /\.ttf(\?.*)?$/, loader: 'file?name=[name].[hash].[ext]' },
+      { test: /\.eot(\?.*)?$/, loader: 'file?name=[name].[hash].[ext]' },
+      { test: /\.svg(\?.*)?$/, loader: 'file?name=[name].[hash].[ext]' },
+      { test: /\.(png|jpg)$/, loader: 'file?name=[name].[hash].[ext]' }
     ]
   },
   eslint: {

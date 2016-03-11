@@ -27,13 +27,16 @@ export default class Block extends Component {
       'content-block': true,
       'inset': inset
     })
+    const classesInner = classNames({
+      'content-block-inner': true
+    })
     return (
       <div className={className}>
         {this.renderTitle()}
         <div className={classes}>
           {!highlight && children}
           {highlight &&
-            <div className='content-block-inner'>
+            <div className={classesInner}>
               {children}
             </div>
           }

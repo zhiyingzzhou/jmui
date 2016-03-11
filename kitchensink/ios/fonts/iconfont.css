@@ -16,6 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-shouji:before { content: "\e600"; }
+.icon-xiazai:before { content: "\e60d"; }
 .icon-pages:before { content: "\e606"; }
 .icon-riqi:before { content: "\e601"; }
 .icon-wenjian:before { content: "\e607"; }

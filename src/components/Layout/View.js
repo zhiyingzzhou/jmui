@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import NotificationSystem from '../Notification/System'
 import ModalSystem from '../Modal/System'
 import IndicatorSystem from '../Indicator/System'
+import PickerSystem from '../Picker/System'
 
 export default class View extends Component {
 
@@ -27,7 +28,8 @@ export default class View extends Component {
         showPreloader: () => { this.showPreloader() },
         hidePreloader: () => { this.hidePreloader() },
         showModal: (modal) => { this.showModal(modal) },
-        hideModal: () => { this.hideModal() }
+        hideModal: () => { this.hideModal() },
+        showPicker: (picker) => { this.showPicker(picker) }
       }
     }
   }
@@ -60,6 +62,10 @@ export default class View extends Component {
     this.refs['modalSystem'].hideModal()
   }
 
+  showPicker (picker) {
+    this.refs['pickerSystem'].showPicker(picker)
+  }
+
   render () {
     const { children } = this.props
     return (
@@ -72,6 +78,7 @@ export default class View extends Component {
         <NotificationSystem ref='notificationSystem' />
         <ModalSystem ref='modalSystem' />
         <IndicatorSystem ref='indicatorSystem' />
+        <PickerSystem ref='pickerSystem' />
       </div>
     )
   }

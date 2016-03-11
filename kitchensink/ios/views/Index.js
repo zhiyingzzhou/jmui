@@ -32,6 +32,12 @@ export default class Index extends Component {
               after='Form'
               onClick={this.handleJump.bind(this, '/components/form')}
             />
+            <List.Item
+              icon={<span className='iconfont icon-xiazai' />}
+              title='选择器'
+              after='Picker'
+              onClick={this.handleJump.bind(this, '/components/picker')}
+            />
           </List.Group>
           <List.Group title='容器'>
             <List.Item
