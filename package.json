@@ -1,9 +1,9 @@
 {
   "name": "jmui",
-  "description": "React Mobile Functional UI Components",
+  "description": "Mobile UI React Components",
   "author": "Jimmy Chou <zliangyu@gmail.com>",
   "license": "MIT",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/junewinds/jmui.git"
@@ -20,7 +20,15 @@
     "mobile",
     "framework",
     "css",
-    "components"
+    "components",
+    "html5",
+    "wechat",
+    "navbar",
+    "toolbar",
+    "notification",
+    "transitionpage",
+    "button",
+    "grid"
   ],
   "main": "./lib/",
   "jsnext:main": "./src/",

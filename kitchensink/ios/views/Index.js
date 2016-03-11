@@ -33,6 +33,18 @@ export default class Index extends Component {
               onClick={this.handleJump.bind(this, '/components/form')}
             />
             <List.Item
+              icon={<span className='iconfont icon-danxuan' />}
+              title='单选列表'
+              after='RadioField'
+              onClick={this.handleJump.bind(this, '/components/radiofield')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-duoxuan12px' />}
+              title='多选列表'
+              after='CheckField'
+              onClick={this.handleJump.bind(this, '/components/checkfield')}
+            />
+            <List.Item
               icon={<span className='iconfont icon-xiazai' />}
               title='选择器'
               after='Picker'

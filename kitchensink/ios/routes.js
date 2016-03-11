@@ -17,6 +17,8 @@ export default function getRoutes () {
         <Route path='button' component={require('./views/Components/Button').default} />
         <Route path='form' component={require('./views/Components/Form').default} />
         <Route path='picker' component={require('./views/Components/Picker').default} />
+        <Route path='radiofield' component={require('./views/Components/RadioField').default} />
+        <Route path='checkfield' component={require('./views/Components/CheckField').default} />
       </Route>
       <Route path='*' component={require('./views/NotFound').default} status={404} />
     </Route>

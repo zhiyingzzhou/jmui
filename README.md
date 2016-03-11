@@ -1,10 +1,15 @@
-React Mobile Functional UI Components
-=====================================
+Mobile UI React Components
+==========================
 
 [![Build Status](https://travis-ci.org/junewinds/jmui.svg?branch=master)](https://travis-ci.org/junewinds/jmui?branch=master)
 [![dependencies](https://david-dm.org/junewinds/jmui.svg)](https://david-dm.org/junewinds/jmui)
 [![devDependency Status](https://david-dm.org/junewinds/jmui/dev-status.svg)](https://david-dm.org/junewinds/jmui#info=devDependencies)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
+Live Demo
+---------
+
+https://junewinds.github.io/jmui
 
 Features
 --------
@@ -26,6 +31,9 @@ Features
   * block
   * form
   * preloader
+  * picker
+  * radio
+  * checkbox
   * ...
 
 Requirements
