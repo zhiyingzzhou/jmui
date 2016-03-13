@@ -1,4 +1,4 @@
-import { Page, TransitionPages, Navbar, Form, TextField, Picker, Block, Button } from 'jmui'
+import { Page, TransitionPages, Navbar, Form, StaticField, Picker, Block, Button } from 'jmui'
 import React, { Component, PropTypes } from 'react'
 
 const singleValues = ['李白', '杜甫', '屈原', '曹植', '白居易', '杜牧', '李清照', '苏轼', '柳宗元', '陆游']
@@ -59,8 +59,7 @@ export default class PickerView extends Component {
     })
   }
 
-  handleTextFieldFocus (e) {
-    e.preventDefault()
+  handleTextFieldFocus () {
     this.context.ui.showPicker({
       doneText: '完成',
       onSelect: ::this.handleSinglePicker,
@@ -69,8 +68,7 @@ export default class PickerView extends Component {
     })
   }
 
-  handleTextFieldFocusCallback (e) {
-    e.preventDefault()
+  handleTextFieldFocusCallback () {
     this.context.ui.showPicker({
       doneText: '完成',
       onSelect: ::this.handleSinglePicker,
@@ -80,8 +78,7 @@ export default class PickerView extends Component {
     })
   }
 
-  handleTextFieldTwoFocus (e) {
-    e.preventDefault()
+  handleTextFieldTwoFocus () {
     this.context.ui.showPicker({
       doneText: '搞定',
       onSelect: ::this.handleTwoPicker,
@@ -103,30 +100,30 @@ export default class PickerView extends Component {
           }}
       />}>
         <Form title='由表单中TextField触发选择'>
-          <TextField
+          <StaticField
             icon={<span className='iconfont icon-yonghu'></span>}
             label='攻城狮'
             value={this.state.singleSelect ? this.state.singleSelect.text : ''}
             placeholder='请选择一位来爱爱'
-            onFocus={::this.handleTextFieldFocus}
+            onClick={::this.handleTextFieldFocus}
           />
         </Form>
         <Form title='由表单中TextField触发，关闭后回调'>
-          <TextField
+          <StaticField
             icon={<span className='iconfont icon-yonghu'></span>}
             label='程序猿'
             placeholder='请选择一位来Review'
             value={this.state.singleSelect ? this.state.singleSelect.text : ''}
-            onFocus={::this.handleTextFieldFocusCallback}
+            onClick={::this.handleTextFieldFocusCallback}
           />
         </Form>
         <Form title='由TextField触发，两列关联选择，自定义选择器文字'>
-          <TextField
+          <StaticField
             icon={<span className='iconfont icon-yonghu'></span>}
             label='诗人'
             value={this.state.twoSelect ? `${this.state.twoSelect.text} ${this.state.twoSelect.child.text}` : ''}
             placeholder='请选择朝代和诗人'
-            onFocus={::this.handleTextFieldTwoFocus}
+            onClick={::this.handleTextFieldTwoFocus}
           />
         </Form>
         <Block title='内联选择器' highlight padding={false}>

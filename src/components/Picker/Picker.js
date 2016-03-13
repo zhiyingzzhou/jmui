@@ -203,7 +203,7 @@ export default class Picker extends Component {
     const selectIndex = this.caclPositionIndex(formattedValues, selectValue)
     return (
       <div className='picker-items-col picker-items-col-center'>
-        <div className='picker-items-col-wrapper' style={{transform: `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`, '-webkit-transform': `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`}}>
+        <div className='picker-items-col-wrapper' style={{transform: `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`, 'WebkitTransform': `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`}}>
           {formattedValues.map((object, index) => {
             return (
               <div onClick={this.handleSelectSingle.bind(this, object)} className={`picker-item ${index === selectIndex ? 'picker-selected' : ''}`} key={index}>{object.text}</div>
@@ -218,7 +218,7 @@ export default class Picker extends Component {
     const { selectParentIndex, formattedValues } = this.state
     return (
       <div className='picker-items-col picker-items-col-center' style={{width: '50%'}}>
-        <div className='picker-items-col-wrapper' style={{transform: `translate3d(0px, ${90 - (selectParentIndex * 36)}px, 0px)`, '-webkit-transform': `translate3d(0px, ${90 - (selectParentIndex * 36)}px, 0px)`}}>
+        <div className='picker-items-col-wrapper' style={{transform: `translate3d(0px, ${90 - (selectParentIndex * 36)}px, 0px)`, 'WebkitTransform': `translate3d(0px, ${90 - (selectParentIndex * 36)}px, 0px)`}}>
           {formattedValues.map((object, index) => {
             return (
               <div onClick={this.handleSelectLeft.bind(this, index)} className={`picker-item ${index === selectParentIndex ? 'picker-selected' : ''}`} key={index}>{object.text}</div>
@@ -235,7 +235,7 @@ export default class Picker extends Component {
     const selectIndex = this.caclPositionIndex(childValues, selectValue.child)
     return (
       <div className='picker-items-col picker-items-col-center' style={{width: '50%'}}>
-        <div className='picker-items-col-wrapper' style={{transform: `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`, '-webkit-transform': `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`}}>
+        <div className='picker-items-col-wrapper' style={{transform: `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`, 'WebkitTransform': `translate3d(0px, ${90 - (selectIndex * 36)}px, 0px)`}}>
           {childValues.map((object, index) => {
             return (
               <div onClick={this.handleSelectRight.bind(this, object)} className={`picker-item ${index === selectIndex ? 'picker-selected' : ''}`} key={index}>{object.text}</div>
