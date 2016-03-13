@@ -22,6 +22,9 @@ export default function getRoutes () {
         <Route path='navbar' component={require('./views/Components/Navbar').default} />
         <Route path='toolbar' component={require('./views/Components/Toolbar').default} />
         <Route path='tabbar' component={require('./views/Components/Tabbar').default} />
+        <Route path='list' component={require('./views/Components/List').default} />
+        <Route path='medialist' component={require('./views/Components/MediaList').default} />
+        <Route path='card' component={require('./views/Components/Card').default} />
       </Route>
       <Route path='*' component={require('./views/NotFound').default} status={404} />
     </Route>

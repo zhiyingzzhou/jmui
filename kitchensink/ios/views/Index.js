@@ -71,6 +71,26 @@ export default class Index extends Component {
               onClick={this.handleJump.bind(this, '/components/toolbar')}
             />
           </List.Group>
+          <List.Group title='列表'>
+            <List.Item
+              icon={<span className='iconfont icon-list' />}
+              title='表格列表'
+              after='List'
+              onClick={this.handleJump.bind(this, '/components/list')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-iconfonttupian' />}
+              title='媒体列表'
+              after='MediaList'
+              onClick={this.handleJump.bind(this, '/components/medialist')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-card' />}
+              title='卡片列表'
+              after='Card'
+              onClick={this.handleJump.bind(this, '/components/card')}
+            />
+          </List.Group>
           <List.Group title='容器'>
             <List.Item
               icon={<span className='iconfont icon-fenleizukuaier' />}
