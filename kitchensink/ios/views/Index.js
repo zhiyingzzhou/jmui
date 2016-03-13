@@ -62,7 +62,7 @@ export default class Index extends Component {
               icon={<span className='iconfont icon-tab' />}
               title='标签栏'
               after='Tabbar'
-              onClick={this.handleJump.bind(this, '/components/navbar')}
+              onClick={this.handleJump.bind(this, '/components/tabbar')}
             />
             <List.Item
               icon={<span className='iconfont icon-dibutiao' />}

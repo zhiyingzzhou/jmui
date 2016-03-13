@@ -15,6 +15,7 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-list:before { content: "\e60d"; }
 .icon-tongzhi:before { content: "\e612"; }
 .icon-shouji:before { content: "\e600"; }
 .icon-loader:before { content: "\e613"; }
@@ -28,6 +29,7 @@
 .icon-duoxuan12px:before { content: "\e609"; }
 .icon-mima:before { content: "\e60a"; }
 .icon-qiehuan:before { content: "\e602"; }
+.icon-card:before { content: "\e615"; }
 .icon-fenleizukuaier:before { content: "\e603"; }
 .icon-wanggetu:before { content: "\e604"; }
 .icon-biaodan:before { content: "\e610"; }
