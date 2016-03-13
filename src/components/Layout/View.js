@@ -3,11 +3,15 @@ import NotificationSystem from '../Notification/System'
 import ModalSystem from '../Modal/System'
 import IndicatorSystem from '../Indicator/System'
 import PickerSystem from '../Picker/System'
+import { getThemes } from '../../utils/theme'
+import classNames from 'classnames'
 
 export default class View extends Component {
 
   static propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    theme: PropTypes.oneOf(getThemes()),
+    className: PropTypes.string
   };
 
   static childContextTypes = {
@@ -67,11 +71,15 @@ export default class View extends Component {
   }
 
   render () {
-    const { children } = this.props
+    const { children, className, theme } = this.props
+    const classes = classNames({
+      'view': true,
+      [`theme-${theme}`]: theme
+    }, className)
     return (
       <div className='wrapper'>
         <div className='views'>
-          <div className='view'>
+          <div className={classes}>
             {children}
           </div>
         </div>

@@ -45,10 +45,30 @@ export default class Index extends Component {
               onClick={this.handleJump.bind(this, '/components/checkfield')}
             />
             <List.Item
-              icon={<span className='iconfont icon-xiazai' />}
+              icon={<span className='iconfont icon-xuanze' />}
               title='选择器'
               after='Picker'
               onClick={this.handleJump.bind(this, '/components/picker')}
+            />
+          </List.Group>
+          <List.Group title='导航'>
+            <List.Item
+              icon={<span className='iconfont icon-daohang' />}
+              title='导航条'
+              after='Navbar'
+              onClick={this.handleJump.bind(this, '/components/navbar')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-tab' />}
+              title='标签栏'
+              after='Tabbar'
+              onClick={this.handleJump.bind(this, '/components/navbar')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-dibutiao' />}
+              title='工具栏'
+              after='Toolbar'
+              onClick={this.handleJump.bind(this, '/components/toolbar')}
             />
           </List.Group>
           <List.Group title='容器'>

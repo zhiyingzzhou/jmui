@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
+import { getThemes } from '../../utils/theme'
 
 export default class Page extends Component {
 
@@ -8,7 +9,8 @@ export default class Page extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     navbar: PropTypes.node,
-    toolbar: PropTypes.node
+    toolbar: PropTypes.node,
+    theme: PropTypes.oneOf(getThemes())
   };
 
   static defaultProps = {
@@ -27,14 +29,15 @@ export default class Page extends Component {
   }
 
   render () {
-    const { children, fix, className, navbar, toolbar, ...props } = this.props
+    const { children, fix, className, navbar, toolbar, theme, ...props } = this.props
     const { tabbar } = this.state
     const classes = classNames({
       'page': true,
       'navbar-fixed': fix && navbar,
       'toolbar-fixed': fix && toolbar || tabbar !== 'none',
       'no-navbar': !navbar,
-      'tabbar-labels-fixed': fix && tabbar === 'label'
+      'tabbar-labels-fixed': fix && tabbar === 'label',
+      [`theme-${theme}`]: theme
     }, className)
     return (
       <div className={classes} {...props}>

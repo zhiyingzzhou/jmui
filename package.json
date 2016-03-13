@@ -15,20 +15,13 @@
   "author": "Jimmy Chou <zliangyu@gmail.com>",
   "keywords": [
     "react",
-    "webpack",
-    "babel",
+    "ui",
     "mobile",
     "framework",
-    "css",
     "components",
-    "html5",
+    "library",
     "wechat",
-    "navbar",
-    "toolbar",
-    "notification",
-    "transitionpage",
-    "button",
-    "grid"
+    "react-component"
   ],
   "main": "./lib/",
   "jsnext:main": "./src/",

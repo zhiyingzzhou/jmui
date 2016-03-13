@@ -19,6 +19,9 @@ export default function getRoutes () {
         <Route path='picker' component={require('./views/Components/Picker').default} />
         <Route path='radiofield' component={require('./views/Components/RadioField').default} />
         <Route path='checkfield' component={require('./views/Components/CheckField').default} />
+        <Route path='navbar' component={require('./views/Components/Navbar').default} />
+        <Route path='toolbar' component={require('./views/Components/Toolbar').default} />
+        <Route path='tabbar' component={require('./views/Components/Tabbar').default} />
       </Route>
       <Route path='*' component={require('./views/NotFound').default} status={404} />
     </Route>

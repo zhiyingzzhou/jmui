@@ -78,7 +78,7 @@ import 'jmui/styles/jmui.ios.theme.blue.css'
 
 TODO
 ----
-* readme
+
 * guide
 * kitchen sink
 * ci test case
