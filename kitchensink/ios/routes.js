@@ -25,6 +25,8 @@ export default function getRoutes () {
         <Route path='list' component={require('./views/Components/List').default} />
         <Route path='medialist' component={require('./views/Components/MediaList').default} />
         <Route path='card' component={require('./views/Components/Card').default} />
+        <Route path='notification' component={require('./views/Components/Notification').default} />
+        <Route path='preloader' component={require('./views/Components/Preloader').default} />
       </Route>
       <Route path='*' component={require('./views/NotFound').default} status={404} />
     </Route>

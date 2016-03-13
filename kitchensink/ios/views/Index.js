@@ -91,6 +91,20 @@ export default class Index extends Component {
               onClick={this.handleJump.bind(this, '/components/card')}
             />
           </List.Group>
+          <List.Group title='交互'>
+            <List.Item
+              icon={<span className='iconfont icon-tongzhi' />}
+              title='通知'
+              after='Notification'
+              onClick={this.handleJump.bind(this, '/components/notification')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-loader' />}
+              title='指示器'
+              after='Preloader'
+              onClick={this.handleJump.bind(this, '/components/preloader')}
+            />
+          </List.Group>
           <List.Group title='容器'>
             <List.Item
               icon={<span className='iconfont icon-fenleizukuaier' />}
