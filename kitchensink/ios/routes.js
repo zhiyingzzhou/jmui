@@ -27,6 +27,9 @@ export default function getRoutes () {
         <Route path='card' component={require('./views/Components/Card').default} />
         <Route path='notification' component={require('./views/Components/Notification').default} />
         <Route path='preloader' component={require('./views/Components/Preloader').default} />
+        <Route path='image' component={require('./views/Components/Image').default} />
+        <Route path='badge' component={require('./views/Components/Badge').default} />
+        <Route path='icon' component={require('./views/Components/Icon').default} />
       </Route>
       <Route path='*' component={require('./views/NotFound').default} status={404} />
     </Route>

@@ -18,7 +18,7 @@ export default class Index extends Component {
       <Page
         fix
         navbar={<Navbar title='Kitchen Sink' />}>
-        <List label='更多组件已在jmui中实现，持续添加到演示中'>
+        <List>
           <List.Group title='组件'>
             <List.Item
               icon={<span className='iconfont icon-anniu' />}
@@ -49,6 +49,24 @@ export default class Index extends Component {
               title='选择器'
               after='Picker'
               onClick={this.handleJump.bind(this, '/components/picker')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-biaoqian' />}
+              title='图标'
+              after='Icon'
+              onClick={this.handleJump.bind(this, '/components/icon')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-iconfonttupian' />}
+              title='图片'
+              after='Image'
+              onClick={this.handleJump.bind(this, '/components/image')}
+            />
+            <List.Item
+              icon={<span className='iconfont icon-badge' />}
+              title='徽标'
+              after='Badge'
+              onClick={this.handleJump.bind(this, '/components/badge')}
             />
           </List.Group>
           <List.Group title='导航'>

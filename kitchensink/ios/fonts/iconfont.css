@@ -25,6 +25,7 @@
 .icon-yonghu:before { content: "\e605"; }
 .icon-daohang:before { content: "\e60c"; }
 .icon-anniu:before { content: "\e608"; }
+.icon-badge:before { content: "\e618"; }
 .icon-dibutiao:before { content: "\e60e"; }
 .icon-duoxuan12px:before { content: "\e609"; }
 .icon-mima:before { content: "\e60a"; }
@@ -37,4 +38,5 @@
 .icon-danxuan:before { content: "\e60b"; }
 .icon-xuanze:before { content: "\e614"; }
 .icon-tab:before { content: "\e60f"; }
+.icon-biaoqian:before { content: "\e617"; }
 .icon-gongjulanmenhu:before { content: "\e611"; }
