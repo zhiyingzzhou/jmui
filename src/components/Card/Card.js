@@ -19,7 +19,7 @@ export default class Card extends Component {
     const { children, className, ...props } = this.props
     const classes = classNames('card', className)
     return (
-      <div className={classes}>
+      <div className={classes} {...props}>
         {children}
       </div>
     )
