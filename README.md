@@ -18,22 +18,30 @@ Features
 * An Enterprise-class design language and high quality UI style
 * Include IOS and Material Themes base on Framework7(https://github.com/nolimits4web/Framework7)
 * Rich library of mobile UI components
-  * view
-  * page
-  * navbar
-  * toolbar
-  * tabbar
-  * button
-  * card
-  * list
-  * notification
-  * modal
-  * block
-  * form
-  * preloader
-  * picker
-  * radio
-  * checkbox
+  * View
+  * Pages
+  * TransitionPages
+  * Page
+  * Grid
+  * Navbar
+  * Toolbar
+  * Tabbar
+  * Form
+    * StaticField
+    * TextField
+    * CheckField
+    * RadioField
+  * Button
+  * Card
+  * List
+  * InfiniteScroll
+  * Notification
+  * Modal
+  * Block
+  * Preloader
+  * Picker
+  * Icon
+  * Image
   * ...
 
 Requirements
