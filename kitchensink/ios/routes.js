@@ -31,6 +31,7 @@ export default function getRoutes () {
         <Route path='image' component={require('./views/Components/Image').default} />
         <Route path='badge' component={require('./views/Components/Badge').default} />
         <Route path='icon' component={require('./views/Components/Icon').default} />
+        <Route path='accordion' component={require('./views/Components/Accordion').default} />
       </Route>
       <Route path='*' component={require('./views/NotFound').default} status={404} />
     </Route>

@@ -196,15 +196,17 @@ export default class AccordionItem extends Component {
       'accordion-item-active': this.isExpanded()
     })
     return (
-      <dl className={className}>
-        <dt
-          onTouchTap={::this.handleClick}
-          className='accordion-item-title'
+      <li className={className}>
+        <div
+          onClick={::this.handleClick}
+          className='item-content'
         >
-          {this.props.title}
-          <span className='accordion-item-icon' />
-        </dt>
-        <dd
+          <div className='item-inner'>
+            <div className='item-title'>{this.props.title}</div>
+            <div className='item-after'><span className='accordion-item-icon' /></div>
+          </div>
+        </div>
+        <div
           className={classNames('accordion-item-body', this.getCollapsibleClassSet())}
           ref='panel'
         >
@@ -213,8 +215,8 @@ export default class AccordionItem extends Component {
           >
             {this.props.children}
           </div>
-        </dd>
-      </dl>
+        </div>
+      </li>
     )
   }
 }

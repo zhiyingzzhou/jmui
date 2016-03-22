@@ -66,16 +66,18 @@ export default class Accordion extends Component {
 
   render () {
     const className = classNames({
-      'accordion': true,
-      'accordion-inset': this.props.inset
+      'list-block': true,
+      'inset': !!this.props.inset
     })
     return (
-      <section
+      <div
         {...this.props}
         className={className}
       >
+        <ul>
         {this.renderItems()}
-      </section>
+        </ul>
+      </div>
     )
   }
 }
