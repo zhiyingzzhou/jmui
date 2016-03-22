@@ -1,8 +1,6 @@
-/* === Lists === */
-@listBlockBorderColor: #c8c7cc;
-@listBlockBg: #fff;
-@dividerBg: #F7F7F7;
-@dividerColor: #8e8e93;
+@import "../global/variable.less";
+@import "../global/mixin.less";
+
 .list-block {
     margin: 35px 0;
     font-size: 17px;
@@ -114,13 +112,6 @@
         margin-left: 5px;
         .flexbox();
         max-height: 28px;
-    }
-    .smart-select .item-after, .autocomplete-opener .item-after {
-        max-width: 70%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        position: relative;
-        display: block;
     }
     .item-link {
         .transition(300ms);
