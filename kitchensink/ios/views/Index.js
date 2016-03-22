@@ -45,6 +45,12 @@ export default class Index extends Component {
               onClick={this.handleJump.bind(this, '/components/checkfield')}
             />
             <List.Item
+              icon={<span className='iconfont icon-jiahao' />}
+              title='数字输入'
+              after='NumberField'
+              onClick={this.handleJump.bind(this, '/components/numberfield')}
+            />
+            <List.Item
               icon={<span className='iconfont icon-xuanze' />}
               title='选择器'
               after='Picker'

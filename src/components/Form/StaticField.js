@@ -5,7 +5,7 @@ export default class StaticField extends Component {
   static propTypes = {
     label: PropTypes.string,
     icon: PropTypes.node,
-    value: PropTypes.string,
+    value: PropTypes.node,
     placeholder: PropTypes.string
   };
 
@@ -30,9 +30,9 @@ export default class StaticField extends Component {
   }
 
   renderInput () {
-    const { placeholder, value, ...props } = this.props
-    if (value && value.length > 1) {
-      return (<div {...props}>{value}</div>)
+    const { placeholder, value, label, icon, ...props } = this.props
+    if (value) {
+      return (<div style={{textAlign: 'right'}} {...props}>{value}</div>)
     }
     return (
       <div className='placeholder' {...props}>{placeholder}</div>

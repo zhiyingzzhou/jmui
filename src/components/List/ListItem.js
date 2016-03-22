@@ -8,7 +8,7 @@ export default class ListItem extends Component {
     icon: PropTypes.node,
     title: PropTypes.string,
     after: PropTypes.node,
-    subTitle: PropTypes.string,
+    subTitle: PropTypes.node,
     text: PropTypes.node,
     onClick: PropTypes.func,
     href: PropTypes.string,
