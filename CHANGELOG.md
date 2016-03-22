@@ -1,3 +1,13 @@
+## [0.1.8](https://github.com/junewinds/jmui/compare/v0.1.8...v0.1.7)
+
+#### 功能
+* 增加Accordion组件
+* 增加NumberInput组件
+
+#### 修改
+* 修复StaticField的dom元素多余标签问题
+* 设置ListItem组件的subTitle属性允许接受React Element
+
 ## [0.1.7](https://github.com/junewinds/jmui/compare/v0.1.7...v0.1.6)
 
 #### 功能

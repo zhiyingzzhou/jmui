@@ -23,6 +23,7 @@ Features
   * TransitionPages
   * Page
   * Grid
+  * Accordion
   * Navbar
   * Toolbar
   * Tabbar
@@ -32,6 +33,7 @@ Features
     * CheckField
     * RadioField
   * Button
+  * NumberInput
   * Card
   * List
   * InfiniteScroll
