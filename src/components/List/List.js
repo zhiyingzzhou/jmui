@@ -13,7 +13,7 @@ export default class List extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    label: PropTypes.string,
+    label: PropTypes.node,
     inset: PropTypes.bool,
     tabletInset: PropTypes.bool
   };

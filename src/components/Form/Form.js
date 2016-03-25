@@ -4,7 +4,7 @@ import classNames from 'classnames'
 export default class Form extends Component {
 
   static propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.node,
     children: PropTypes.node,
     className: PropTypes.string,
     multiLine: PropTypes.bool,
