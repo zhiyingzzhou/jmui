@@ -105,7 +105,7 @@ export default class NumberInput extends Component {
     })
   }
 
-  handleChange (e) {
+  handleBlur (e) {
     let v = Number(e.target.value)
     if (isNaN(v)) {
       return
@@ -130,6 +130,23 @@ export default class NumberInput extends Component {
     })
   }
 
+  handleChange (e) {
+    let input = e.target.value
+    if (input === null || input === '' || input.length === 0) {
+      this.setState({
+        value: null
+      })
+      return
+    }
+    let v = Number(input)
+    if (isNaN(v)) {
+      return
+    }
+    this.setState({
+      value: v
+    })
+  }
+
   onValueChange (value) {
     const { onChange } = this.props
     if (onChange) {
@@ -142,7 +159,7 @@ export default class NumberInput extends Component {
     return (
       <div className='numberinput'>
         <span onClick={::this.handleReduce} className={`numberinput-control numberinput-control-left ${canReduce ? '' : 'numberinput-control-disable'}`}>-</span>
-        <input onChange={::this.handleChange} type='number' value={value === null ? null : Number(value).toFixed(digital)} />
+        <input onBlur={::this.handleBlur} onChange={::this.handleChange} type='number' value={value === null ? null : Number(value).toFixed(digital)} />
         <span onClick={::this.handlePlus} className={`numberinput-control numberinput-control-right ${canPlus ? '' : 'numberinput-control-disable'}`}>+</span>
       </div>
     )
